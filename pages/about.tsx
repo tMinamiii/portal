@@ -3,14 +3,16 @@ import Layout from '../components/Layout';
 import React, { ReactElement } from 'react';
 const AboutPage: React.FC = (): ReactElement => {
   return (
-    <Layout title="About | Next.js + TypeScript Example">
+    <Layout title="My Resume">
       <h1>About</h1>
-      <p>This is the about page</p>
-      <p>
-        <Link href="/">
-          <a>Go home</a>
-        </Link>
-      </p>
+      <p>XYZ</p>
+      <!--
+        <p>
+          <Link href="/">
+            <a>Go home</a>
+          </Link>
+        </p>
+      -->
     </Layout>
   );
 };
