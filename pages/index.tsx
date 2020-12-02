@@ -1,17 +1,48 @@
+// import fetch from 'isomorphic-unfetch';
+import Head from 'next/head';
 import Link from 'next/link';
 import React, { ReactElement } from 'react';
-import Layout from '../components/Layout';
+import ReactMarkdown from 'react-markdown';
+import gfm from 'remark-gfm';
 
-const IndexPage: React.FC = (): ReactElement => {
+type Props = {
+  content: string;
+};
+
+function ResumeMd({ content }: Props): ReactElement {
+  return <ReactMarkdown plugins={[[gfm, { singleTilde: false }]]}>{content}</ReactMarkdown>;
+}
+
+export async function getServerSideProps(): Promise<any> {
+  const gistUrl =
+    'https://gist.githubusercontent.com/tMinamiii/f1e93ca728eb66558f19fadb1a9e6feb/raw/100c53ec4ab12d27d860d8e9b7a9959b3ae96e4c/resume.md';
+  const resp = await fetch(gistUrl);
+  const text = await resp.text();
+  console.log(text);
+  return { props: { content: text } };
+}
+
+const IndexPage: React.FC<Props> = ({ content }: Props): ReactElement => {
   return (
-    <Layout title="Home | Next.js + TypeScript Example">
-      <h1>Hello Next.js 👋</h1>
-      <p>
-        <Link href="/about">
-          <a>About</a>
-        </Link>
-      </p>
-    </Layout>
+    <div>
+      <Head>
+        <title>Resume</title>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+      <header>
+        <nav>
+          <Link href="/">
+            <a>Home</a>
+          </Link>{' '}
+        </nav>
+      </header>
+      <ResumeMd content={content} />
+      <footer>
+        <hr />
+        <span>tMinamiii</span>
+      </footer>
+    </div>
   );
 };
 export default IndexPage;

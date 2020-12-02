@@ -11,10 +11,12 @@
     "lint-fix": "eslint components/** pages/** utils/** --fix --ext ts,tsx"
   },
   "dependencies": {
+    "isomorphic-unfetch": "^3.1.0",
     "next": "^10.0.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-markdown": "^5.0.3"
+    "react-markdown": "^5.0.3",
+    "remark-gfm": "^1.0.0"
   },
   "devDependencies": {
     "@types/node": "^12.19.8",
