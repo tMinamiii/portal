@@ -1,18 +1,18 @@
-// import fetch from 'isomorphic-unfetch';
 import Head from 'next/head';
 import Link from 'next/link';
 import React, { ReactElement } from 'react';
 import ReactMarkdown from 'react-markdown';
 import gfm from 'remark-gfm';
 
+const gistResumeUrl =
+  'https://gist.githubusercontent.com/tMinamiii/f1e93ca728eb66558f19fadb1a9e6feb/raw/100c53ec4ab12d27d860d8e9b7a9959b3ae96e4c/resume.md';
+
 type Props = {
   content: string;
 };
 
 export async function getServerSideProps(): Promise<any> {
-  const gistUrl =
-    'https://gist.githubusercontent.com/tMinamiii/f1e93ca728eb66558f19fadb1a9e6feb/raw/100c53ec4ab12d27d860d8e9b7a9959b3ae96e4c/resume.md';
-  const resp = await fetch(gistUrl);
+  const resp = await fetch(gistResumeUrl);
   const text = await resp.text();
   console.log(text);
   return { props: { content: text } };
