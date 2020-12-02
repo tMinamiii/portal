@@ -9,10 +9,6 @@ type Props = {
   content: string;
 };
 
-function ResumeMd({ content }: Props): ReactElement {
-  return <ReactMarkdown plugins={[[gfm, { singleTilde: false }]]}>{content}</ReactMarkdown>;
-}
-
 export async function getServerSideProps(): Promise<any> {
   const gistUrl =
     'https://gist.githubusercontent.com/tMinamiii/f1e93ca728eb66558f19fadb1a9e6feb/raw/100c53ec4ab12d27d860d8e9b7a9959b3ae96e4c/resume.md';
@@ -37,7 +33,7 @@ const IndexPage: React.FC<Props> = ({ content }: Props): ReactElement => {
           </Link>{' '}
         </nav>
       </header>
-      <ResumeMd content={content} />
+      <ReactMarkdown plugins={[[gfm, { singleTilde: false }]]}>{content}</ReactMarkdown>
       <footer>
         <hr />
         <span>tMinamiii</span>
