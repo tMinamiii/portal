@@ -1,3 +1,4 @@
+import 'github-markdown-css';
 import Head from 'next/head';
 import React, { ReactElement } from 'react';
 import ReactMarkdown from 'react-markdown';
@@ -30,7 +31,9 @@ const ResumePage: React.FC<Props> = ({ content }: Props): ReactElement => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <HeaderNavi />
-      <ReactMarkdown plugins={[[gfm]]}>{content}</ReactMarkdown>
+      <div className="markdown-body">
+        <ReactMarkdown plugins={[gfm]}>{content}</ReactMarkdown>
+      </div>
     </div>
   );
 };

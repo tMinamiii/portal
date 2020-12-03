@@ -11,7 +11,6 @@
     "lint-fix": "eslint components/** pages/** utils/** --fix --ext ts,tsx"
   },
   "dependencies": {
-    "isomorphic-unfetch": "^3.1.0",
     "next": "^10.0.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -24,7 +23,6 @@
     "@types/react-dom": "^16.9.10",
     "@typescript-eslint/eslint-plugin": "^4.9.0",
     "@typescript-eslint/parser": "^4.9.0",
-    "autoprefixer": "^10.0.4",
     "eslint": "^7.14.0",
     "eslint-config-prettier": "^6.12.0",
     "eslint-config-standard": "^14.1.1",
@@ -34,6 +32,8 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.21.4",
     "eslint-plugin-standard": "^4.1.0",
+    "github-markdown-css": "^4.0.0",
+    "postcss-preset-env": "^6.7.0",
     "prettier": "^2.2.1",
     "tailwindcss": "^2.0.1",
     "typescript": "~4.0.3"
