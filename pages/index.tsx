@@ -25,22 +25,22 @@ const IndexPage: React.FC = (): ReactElement => {
         <div className="flex justify-center">
           <div className="p-2">
             <a href="https://github.com/tMinamiii">
-              <Image src="/github.png" width={36} height={36} />
+              <Image src="/images/github.png" width={36} height={36} />
             </a>
           </div>
           <div className="p-2">
             <a href="https://twitter.com/tMinamiii">
-              <Image src="/twitter.png" width={36} height={36} />
+              <Image src="/images/twitter.png" width={36} height={36} />
             </a>
           </div>
           <div className="p-2">
             <a href="https://zenn.dev/tminamiii">
-              <Image src="/zenn.png" width={36} height={36} />
+              <Image src="/images/zenn.png" width={36} height={36} />
             </a>
           </div>
           <div className="p-2">
             <a href="https://qiita.com/">
-              <Image src="/qiita.png" width={36} height={36} />
+              <Image src="/images/qiita.png" width={36} height={36} />
             </a>
           </div>
         </div>
