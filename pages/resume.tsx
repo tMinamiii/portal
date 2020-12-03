@@ -9,11 +9,17 @@ type Props = {
   content: string;
 };
 
-export async function getServerSideProps(): Promise<any> {
+export async function getStaticProps(): Promise<any> {
   const resp = await fetch(gistResumeUrl);
   const text = await resp.text();
   return { props: { content: text } };
 }
+
+// export async function getServerSideProps(): Promise<any> {
+//   const resp = await fetch(gistResumeUrl);
+//   const text = await resp.text();
+//   return { props: { content: text } };
+// }
 
 const ResumePage: React.FC<Props> = ({ content }: Props): ReactElement => {
   return (
