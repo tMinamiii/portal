@@ -4,15 +4,17 @@ import React, { ReactElement } from 'react';
 const HeaderNavi: React.FC = (): ReactElement => {
   return (
     <header>
-      <nav className="text-center">
+      <nav className="text-center text-2xl p-4">
         <Link href="/">
-          <a>Home</a>
-        </Link>{' '}
+          <a className="underline">Home</a>
+        </Link>
+        {' / '}
         <Link href="/resume">
-          <a>Resume</a>
-        </Link>{' '}
+          <a className="underline">Resume</a>
+        </Link>
+        {' / '}
         <Link href="/articles">
-          <a>Articles</a>
+          <a className="underline">Articles</a>
         </Link>{' '}
       </nav>
     </header>
