@@ -1,22 +1,8 @@
 import Head from 'next/head';
-import Link from 'next/link';
 import React, { ReactElement } from 'react';
-import ReactMarkdown from 'react-markdown';
-import gfm from 'remark-gfm';
+import HeaderNavi from '../components/HeaderNavi';
 
-const gistResumeUrl = 'https://gist.githubusercontent.com/tMinamiii/f1e93ca728eb66558f19fadb1a9e6feb/raw/resume.md';
-type Props = {
-  content: string;
-};
-
-export async function getServerSideProps(): Promise<any> {
-  const resp = await fetch(gistResumeUrl);
-  const text = await resp.text();
-  console.log(text);
-  return { props: { content: text } };
-}
-
-const IndexPage: React.FC<Props> = ({ content }: Props): ReactElement => {
+const IndexPage: React.FC = (): ReactElement => {
   return (
     <div>
       <Head>
@@ -24,18 +10,27 @@ const IndexPage: React.FC<Props> = ({ content }: Props): ReactElement => {
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <header>
-        <nav>
-          <Link href="/">
-            <a>Home</a>
-          </Link>{' '}
-        </nav>
-      </header>
-      <ReactMarkdown plugins={[[gfm, { singleTilde: false }]]}>{content}</ReactMarkdown>
-      <footer>
-        <hr />
-        <span>tMinamiii</span>
-      </footer>
+      <HeaderNavi />
+      <div>
+        <a href="https://gyazo.com/26f787388ec1c0b2fa23720a63859abe">
+          <img src="https://i.gyazo.com/26f787388ec1c0b2fa23720a63859abe.jpg" alt="Image from Gyazo" width="150" />
+        </a>
+        <ul>
+          <li>名前: 南 貴博</li>
+          <li>
+            GitHub: <a href="https://github.com/tMinamiii">tMinamiii</a>
+          </li>
+          <li>
+            Twitter: <a href="https://twitter.com/tMinamiii">@tMinamiii</a>
+          </li>
+          <li>
+            Zenn: <a href="https://zenn.dev/tminamiii">tMinamiii</a>
+          </li>
+          <li>
+            Qiita: <a href="https://qiita.com/">tMinamiii</a>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };
