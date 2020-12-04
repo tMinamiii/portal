@@ -13,12 +13,9 @@ const IndexPage: React.FC = (): ReactElement => {
         <link rel="shortcut icon" href="/static/favicon.ico" />
       </Head>
       <HeaderNavi />
-      <img
-        className="w-32 h-32  mx-auto rounded-3xl m-4"
-        src="https://i.gyazo.com/26f787388ec1c0b2fa23720a63859abe.jpg"
-        alt="Image from Gyazo"
-        width="150"
-      />
+      <div className="w-32 h-32 mx-auto m-8">
+        <Image className="rounded-3xl" src="/images/profile.jpg" width={150} height={150} />
+      </div>
       <div className="flex justify-center">
         <div className="m-2">
           <a href="https://github.com/tMinamiii">
