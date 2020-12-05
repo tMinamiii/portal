@@ -1,17 +1,12 @@
-import Head from 'next/head';
 import Image from 'next/image';
 import React, { ReactElement } from 'react';
+import HeaderElements from '../components/HeaderElements';
 import HeaderNavi from '../components/HeaderNavi';
 
 const IndexPage: React.FC = (): ReactElement => {
   return (
     <div>
-      <Head>
-        <title>My Portal</title>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link rel="shortcut icon" href="/static/favicon.ico" />
-      </Head>
+      <HeaderElements title="Articles" />
       <HeaderNavi />
       <div className="w-32 h-32 mx-auto m-8">
         <Image className="rounded-3xl" src="/images/profile.jpg" width={150} height={150} />
