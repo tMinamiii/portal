@@ -15,7 +15,7 @@ type Props = {
 //   const text = await resp.text();
 //   return { props: { content: text } };
 // }
-
+// https://git.io/JfUZE
 export async function getServerSideProps(): Promise<any> {
   const resp = await fetch(gistResumeUrl);
   const text = await resp.text();
@@ -26,7 +26,7 @@ function Image(props: any) {
   return <img {...props} style={{ maxWidth: '1000px' }} />;
 }
 function Text(props: any) {
-  return <p {...props} style={{ maxWidth: '1000px', margin: '2px' }} />;
+  return <p {...props} style={{ maxWidth: '1000px', margin: '2px', display: 'inline-block' }} />;
 }
 
 const ResumePage: React.FC<Props> = ({ content }: Props): ReactElement => {
