@@ -31,7 +31,7 @@ const ResumePage: React.FC<Props> = ({ content }: Props): ReactElement => {
     <div>
       <HeaderElements title="Resume" />
       <HeaderNavi />
-      <div className="markdown-body">
+      <div className="markdown-body m-10">
         <ReactMarkdown plugins={[gfm]} source={content} renderers={{ image: Image }} />
       </div>
     </div>
