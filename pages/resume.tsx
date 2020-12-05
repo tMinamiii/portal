@@ -25,14 +25,19 @@ export async function getServerSideProps(): Promise<any> {
 function Image(props: any) {
   return <img {...props} style={{ maxWidth: '1200px' }} />;
 }
+function Text(props: any) {
+  return <div {...props} style={{ maxWidth: '100%' }} />;
+}
 
 const ResumePage: React.FC<Props> = ({ content }: Props): ReactElement => {
   return (
     <div>
       <HeaderElements title="Resume" />
       <HeaderNavi />
-      <div className="markdown-body m-10">
-        <ReactMarkdown plugins={[gfm]} source={content} renderers={{ image: Image }} />
+      <div className="md:container md:mx-auto m-auto max-width: 100px">
+        <div className="markdown-body">
+          <ReactMarkdown plugins={[gfm]} source={content} renderers={{ image: Image, text: Text }} />
+        </div>
       </div>
     </div>
   );
