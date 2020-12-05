@@ -23,10 +23,10 @@ export async function getServerSideProps(): Promise<any> {
 }
 
 function Image(props: any) {
-  return <img {...props} style={{ maxWidth: '1200px' }} />;
+  return <img {...props} style={{ maxWidth: '1000px' }} />;
 }
 function Text(props: any) {
-  return <div {...props} style={{ maxWidth: '100%' }} />;
+  return <p {...props} style={{ maxWidth: '1000px', margin: '2px' }} />;
 }
 
 const ResumePage: React.FC<Props> = ({ content }: Props): ReactElement => {
@@ -34,10 +34,12 @@ const ResumePage: React.FC<Props> = ({ content }: Props): ReactElement => {
     <div>
       <HeaderElements title="Resume" />
       <HeaderNavi />
-      <div className="md:container md:mx-auto m-auto max-width: 100px">
-        <div className="markdown-body">
+      <div className="grid grid-cols-6">
+        <div className="col-span-1" />
+        <div className="markdown-body col-span-4 m-10">
           <ReactMarkdown plugins={[gfm]} source={content} renderers={{ image: Image, text: Text }} />
         </div>
+        <div className="col-span-1" />
       </div>
     </div>
   );
