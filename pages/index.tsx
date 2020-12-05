@@ -6,7 +6,7 @@ import HeaderNavi from '../components/HeaderNavi';
 const IndexPage: React.FC = (): ReactElement => {
   return (
     <div>
-      <HeaderElements title="Articles" />
+      <HeaderElements title="Home" />
       <HeaderNavi />
       <div className="w-32 h-32 mx-auto m-8">
         <Image className="rounded-3xl" src="/images/profile.jpg" width={150} height={150} />

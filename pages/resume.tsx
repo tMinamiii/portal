@@ -25,7 +25,7 @@ export async function getServerSideProps(): Promise<any> {
 const ResumePage: React.FC<Props> = ({ content }: Props): ReactElement => {
   return (
     <div>
-      <HeaderElements title="Articles" />
+      <HeaderElements title="Resume" />
       <HeaderNavi />
       <div className="markdown-body">
         <ReactMarkdown plugins={[gfm]}>{content}</ReactMarkdown>
