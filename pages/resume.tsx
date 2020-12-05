@@ -22,22 +22,22 @@ export async function getServerSideProps(): Promise<any> {
   return { props: { content: text } };
 }
 
-function Image(props: any) {
-  return <img {...props} style={{ maxWidth: '1000px' }} />;
-}
-function Text(props: any) {
-  return <p {...props} style={{ maxWidth: '1000px', margin: '2px', display: 'inline-block' }} />;
-}
-
+// function Image(props: any) {
+//   return <img {...props} style={{ maxWidth: '1000px' }} />;
+// }
+// function Text(props: any) {
+//   return <p {...props} style={{ maxWidth: '1000px', margin: '2px', display: 'inline-block' }} />;
+// }
+// renderers={{ image: Image, text: Text }}
 const ResumePage: React.FC<Props> = ({ content }: Props): ReactElement => {
   return (
     <div>
       <HeaderElements title="Resume" />
       <HeaderNavi />
-      <div className="grid grid-cols-8">
+      <div className="grid grid-cols-9">
         <div className="col-span-2" />
-        <div className="markdown-body col-span-4 m-10">
-          <ReactMarkdown plugins={[gfm]} source={content} renderers={{ image: Image, text: Text }} />
+        <div className="markdown-body col-span-5 m-10">
+          <ReactMarkdown plugins={[gfm]} source={content} />
         </div>
         <div className="col-span-2" />
       </div>
