@@ -9,10 +9,6 @@ const HeaderNavi: React.FC = (): ReactElement => {
           <a className="underline">Home</a>
         </Link>
         {' - '}
-        <Link href="/resume">
-          <a className="underline">Resume</a>
-        </Link>
-        {' - '}
         <Link href="/articles">
           <a className="underline">Articles</a>
         </Link>{' '}

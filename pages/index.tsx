@@ -1,44 +1,48 @@
-import Image from 'next/image';
+import 'github-markdown-css';
 import React, { ReactElement } from 'react';
+import ReactMarkdown from 'react-markdown';
+import gfm from 'remark-gfm';
 import HeaderElements from '../components/HeaderElements';
 import HeaderNavi from '../components/HeaderNavi';
 
-const IndexPage: React.FC = (): ReactElement => {
+const gistResumeUrl = 'https://gist.githubusercontent.com/tMinamiii/f1e93ca728eb66558f19fadb1a9e6feb/raw/resume.md';
+type Props = {
+  content: string;
+};
+
+// export async function getStaticProps(): Promise<any> {
+//   const resp = await fetch(gistResumeUrl);
+//   const text = await resp.text();
+//   return { props: { content: text } };
+// }
+// https://git.io/JfUZE
+export async function getServerSideProps(): Promise<any> {
+  const resp = await fetch(gistResumeUrl);
+  const text = await resp.text();
+  return { props: { content: text } };
+}
+
+// function Image(props: any) {
+//   return <img {...props} style={{ maxWidth: '1000px' }} />;
+// }
+// function Text(props: any) {
+//   return <p {...props} style={{ maxWidth: '1000px', margin: '2px', display: 'inline-block' }} />;
+// }
+// renderers={{ image: Image, text: Text }}
+
+const ResumePage: React.FC<Props> = ({ content }: Props): ReactElement => {
   return (
     <div>
-      <HeaderElements title="Home" />
+      <HeaderElements title="Resume" />
       <HeaderNavi />
-      <div className="w-32 h-32 mx-auto m-8">
-        <Image className="rounded-3xl" src="/images/profile.jpg" width={150} height={150} />
-      </div>
-      <div className="flex justify-center">
-        <div className="m-2">
-          <a href="https://github.com/tMinamiii">
-            <Image src="/images/github.png" width={36} height={36} />
-          </a>
+      <div className="grid grid-cols-9">
+        <div className="col-span-2" />
+        <div className="markdown-body col-span-5 m-10">
+          <ReactMarkdown plugins={[gfm]} source={content} />
         </div>
-        <div className="m-2">
-          <a href="https://twitter.com/tMinamiii">
-            <Image src="/images/twitter.png" width={36} height={36} />
-          </a>
-        </div>
-        <div className="m-2">
-          <a href="https://zenn.dev/tminamiii">
-            <Image src="/images/zenn.png" width={36} height={36} />
-          </a>
-        </div>
-        <div className="m-2">
-          <a href="https://qiita.com/tMinami">
-            <Image src="/images/qiita.png" width={36} height={36} />
-          </a>
-        </div>
-        <div className="m-2">
-          <a href="https://www.instagram.com/tminamiii/">
-            <Image src="/images/instagram.png" width={36} height={36} />
-          </a>
-        </div>
+        <div className="col-span-2" />
       </div>
     </div>
   );
 };
-export default IndexPage;
+export default ResumePage;
