@@ -6,7 +6,7 @@ const HeaderNavi: React.FC = (): ReactElement => {
     <header>
       <nav className="text-center text-xl p-4">
         <Link href="/">
-          <a className="underline">Home</a>
+          <a className="underline">Resume</a>
         </Link>
         {' - '}
         <Link href="/articles">
