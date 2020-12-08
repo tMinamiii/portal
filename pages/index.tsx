@@ -35,12 +35,12 @@ const ResumePage: React.FC<Props> = ({ content }: Props): ReactElement => {
     <div>
       <HeaderElements title="Resume" />
       <HeaderNavi />
-      <div className="grid grid-cols-12">
-        <div className="col-span-1" />
-        <div className="markdown-body col-span-10 m-10">
+      <div className="grid sm:grid-cols-10 md:grid-cols-12">
+        <div className="sm:col-span-1 md:col-span-2" />
+        <div className="markdown-body sm:col-span-8 md:col-span-8 m-1">
           <ReactMarkdown plugins={[gfm]} source={content} />
         </div>
-        <div className="col-span-1" />
+        <div className="sm:col-span-1 md:col-span-2" />
       </div>
     </div>
   );
