@@ -2,6 +2,7 @@ import 'github-markdown-css';
 import React, { ReactElement } from 'react';
 import ReactMarkdown from 'react-markdown';
 import gfm from 'remark-gfm';
+import Border from '../components/Border';
 
 type Props = {
   content: string;
@@ -9,13 +10,11 @@ type Props = {
 
 const MdArticle: React.FC<Props> = ({ content }: Props): ReactElement => {
   return (
-    <div className="grid sm:grid-cols-10 md:grid-cols-12">
-      <div className="sm:col-span-1 md:col-span-1" />
-      <div className="markdown-body rounded-lg border-solid border-2 sm:col-span-8 md:col-span-10 p-10">
+    <Border element={(
+      <div className="markdown-body">
         <ReactMarkdown className="markdown" plugins={[gfm]} source={content} />
       </div>
-      <div className="sm:col-span-1 md:col-span-1" />
-    </div>
-  );
+    )} />
+  )
 };
 export default MdArticle;
