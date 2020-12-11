@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "type-check": "tsc",
-    "lint": "eslint components/** pages/** utils/** --ext ts,tsx",
-    "lint-fix": "eslint components/** pages/** utils/** --fix --ext ts,tsx"
+    "lint": "eslint components/** pages/**  --ext ts,tsx",
+    "lint-fix": "eslint components/** pages/**  --fix --ext ts,tsx"
   },
   "dependencies": {
     "next": "^10.0.3",
