@@ -10,11 +10,11 @@ type Props = {
 const MdArticle: React.FC<Props> = ({ content }: Props): ReactElement => {
   return (
     <div className="grid sm:grid-cols-10 md:grid-cols-12">
-      <div className="sm:col-span-1 md:col-span-2" />
-      <div className="markdown-body rounded-lg border-solid border-2 sm:col-span-8 md:col-span-8 p-5">
+      <div className="sm:col-span-1 md:col-span-1" />
+      <div className="markdown-body rounded-lg border-solid border-2 sm:col-span-8 md:col-span-10 p-10">
         <ReactMarkdown plugins={[gfm]} source={content} />
       </div>
-      <div className="sm:col-span-1 md:col-span-2" />
+      <div className="sm:col-span-1 md:col-span-1" />
     </div>
   );
 };
