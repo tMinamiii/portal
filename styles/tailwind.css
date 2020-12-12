@@ -5,31 +5,31 @@
 @tailwind components;
 /* Stop purging. */
 
-div.markdown ul {
+div.list-mark ul {
     list-style: disc;
     list-style-type: disc;
-    margin: 0;
-    padding: 1;
+    margin: 0 0 0 1em;
+    padding: 0;
 }
 
-div.markdown ul ul {
+div.list-mark ul ul {
     list-style: circle;
     list-style-type: circle;
-    margin:  0 0 1em;
-    padding: 1;
+    margin:  0 0 0 1em;
+    padding: 0;
 }
 
-div.markdown ul ul ul {
+div.list-mark ul ul ul {
     list-style: square;
     list-style-type: square;
     margin: 0 0 0 1em;
-    padding: 1;
+    padding: 0;
 }
 
-div.markdown ul ul ul ul{
+div.list-mark ul ul ul ul{
     list-style: circle;
     margin: 0 0 0 1em;
-    padding: 1;
+    padding: 0;
 }
 
 

@@ -2,17 +2,15 @@ import Link from 'next/link';
 import React, { ReactElement } from 'react';
 
 type Props = {
-  site: string;
   url: string;
   title: string;
 };
 
-const ArticleLinkList: React.FC<Props> = ({ site, url, title }: Props): ReactElement => {
-  const linkTitle = site ? `[${site}]` + title : title;
+const ArticleLinkList: React.FC<Props> = ({ url, title }: Props): ReactElement => {
   return (
     <li>
       <Link href={url}>
-        <a>{linkTitle}</a>
+        <a className="underline">{title}</a>
       </Link>
     </li>
   );

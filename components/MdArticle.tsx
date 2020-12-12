@@ -13,7 +13,7 @@ const MdArticle: React.FC<Props> = ({ content }: Props): ReactElement => {
     <Border
       element={
         <div className="markdown-body">
-          <ReactMarkdown className="markdown" plugins={[gfm]} source={content} />
+          <ReactMarkdown className="list-mark" plugins={[gfm]} source={content} />
         </div>
       }
     />
