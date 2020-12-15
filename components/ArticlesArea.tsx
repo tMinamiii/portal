@@ -2,11 +2,11 @@ import React, { ReactElement } from 'react';
 import Border from '../components/Border';
 
 type Props = {
-  title: string
+  title: string;
   articles: Array<ReactElement>;
 };
 
-const ArticlesArea: React.FC<Props> = ({title, articles}: Props): ReactElement => {
+const ArticlesArea: React.FC<Props> = ({ title, articles }: Props): ReactElement => {
   return (
     <Border
       element={
