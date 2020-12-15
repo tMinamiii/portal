@@ -19,15 +19,10 @@ export async function getServerSideProps(): Promise<any> {
 }
 
 function fetchZenArticles(feedStr: string): Array<ReactElement> {
-  const ignores = [
-    'https://zenn.dev/tminamiii/articles/97e9aab5d44af5',
-    'https://zenn.dev/tminamiii/articles/b4302125c89fdc',
-    'https://zenn.dev/tminamiii/articles/b26a773cef9ff2',
-  ];
   const feed = JSON.parse(feedStr);
   const articles: Array<ReactElement> = [];
   feed.items.map((f: any, i: number) => {
-    if (f.title && f.link && !ignores.includes(f.link)) {
+    if (f.title && f.link) {
       articles.push(<ArticleLinkList key={`zenn_${i}`} title={f.title} url={f.link} />);
     }
   });
