@@ -4,6 +4,7 @@ import ArticleLinkList from '../components/ArticleLinkList';
 import ArticlesArea from '../components/ArticlesArea';
 import HeaderElements from '../components/HeaderElements';
 import HeaderNavi from '../components/HeaderNavi';
+import { AboutIdealTeamTitle } from './articles/2020/AboutIdealTeam';
 
 type Props = {
   zennFeed: string;
@@ -18,7 +19,15 @@ export async function getServerSideProps(): Promise<any> {
   return { props: { zennFeed: JSON.stringify(zennFeed), qiitaFeed: JSON.stringify(qiitaFeed) } };
 }
 
-function fetchZenArticles(feedStr: string): Array<ReactElement> {
+function fetchMdArticles(): Array<ReactElement> {
+  const articles: Array<ReactElement> = [];
+  articles.push(
+    <ArticleLinkList key="about-ideal-team-2020" title={AboutIdealTeamTitle} url="/articles/2020/AboutIdealTeam" />,
+  );
+  return articles;
+}
+
+function fetchRssArticles(feedStr: string): Array<ReactElement> {
   const feed = JSON.parse(feedStr);
   const articles: Array<ReactElement> = [];
   feed.items.map((f: any, i: number) => {
@@ -28,13 +37,16 @@ function fetchZenArticles(feedStr: string): Array<ReactElement> {
   });
   return articles;
 }
+
 const ArticlesPage: React.FC<Props> = ({ zennFeed, qiitaFeed }: Props): ReactElement => {
-  const zenn = fetchZenArticles(zennFeed);
-  const qiita = fetchZenArticles(qiitaFeed);
+  const myContents = fetchMdArticles();
+  const zenn = fetchRssArticles(zennFeed);
+  const qiita = fetchRssArticles(qiitaFeed);
   return (
     <div>
       <HeaderElements title="Articles" />
       <HeaderNavi />
+      <ArticlesArea title="tminamiii.dev" articles={myContents} />
       <ArticlesArea title="Zenn" articles={zenn} />
       <ArticlesArea title="Qiita" articles={qiita} />
     </div>
