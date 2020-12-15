@@ -7,7 +7,7 @@ type Props = {
 };
 
 function fetchImage(title: string): JSX.Element | undefined {
-  if (title === 'Zenn')
+  if (title.toLowerCase() === 'zenn')
     return (
       <img
         className="inline m-1"
@@ -16,7 +16,7 @@ function fetchImage(title: string): JSX.Element | undefined {
         width="16"
       />
     );
-  else if (title === 'Qiita') {
+  else if (title.toLowerCase() === 'qiita') {
     return (
       <img
         className="inline m-1"
