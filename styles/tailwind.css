@@ -5,6 +5,10 @@
 @tailwind components;
 /* Stop purging. */
 
+div.my-articles li {
+    padding: 4px 0;
+}
+
 div.list-mark ul {
     list-style: disc;
     list-style-type: disc;

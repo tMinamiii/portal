@@ -12,7 +12,7 @@ const ArticlesArea: React.FC<Props> = ({title, articles}: Props): ReactElement =
       element={
         <div>
           <div className="text-xl font-bold">{title}</div>
-          <div className="list-mark">
+          <div className="my-articles list-mark">
             <ul>{articles}</ul>
           </div>
         </div>
