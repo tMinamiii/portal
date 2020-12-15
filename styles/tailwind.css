@@ -9,6 +9,18 @@ div.my-articles li {
     padding: 4px 0;
 }
 
+div.markdown-body h1 {
+    font-size: 160%;
+}
+
+div.markdown-body h2 {
+    font-size: 130%;
+}
+
+div.markdown-body h3 {
+    font-size: 110%;
+}
+
 div.list-mark ul {
     list-style: disc;
     list-style-type: disc;
