@@ -11,11 +11,13 @@ type Props = {
   qiitaFeed: string;
 };
 
-export async function getServerSideProps(): Promise<any> {
+// export async function getServerSideProps(): Promise<any> {
+export async function getStaticProps(): Promise<any> {
   const parser = new Parser();
-  const zennFeed = await parser.parseURL('https://zenn.dev/tminamiii/feed');
-  const qiitaFeed = await parser.parseURL('https://qiita.com/tMinamiii/feed.atom');
-
+  const zennFeedP = parser.parseURL('https://zenn.dev/tminamiii/feed');
+  const qiitaFeedP = parser.parseURL('https://qiita.com/tMinamiii/feed.atom');
+  const zennFeed = await zennFeedP;
+  const qiitaFeed = await qiitaFeedP;
   return { props: { zennFeed: JSON.stringify(zennFeed), qiitaFeed: JSON.stringify(qiitaFeed) } };
 }
 
