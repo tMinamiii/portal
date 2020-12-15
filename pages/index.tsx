@@ -1,25 +1,25 @@
+import fs from 'fs';
 import React, { ReactElement } from 'react';
 import HeaderElements from '../components/HeaderElements';
 import HeaderNavi from '../components/HeaderNavi';
 import MdArticle from '../components/MdArticle';
 
-const gistResumeUrl = 'https://gist.githubusercontent.com/tMinamiii/f1e93ca728eb66558f19fadb1a9e6feb/raw/resume.md';
 type Props = {
   content: string;
 };
 
-// export async function getStaticProps(): Promise<any> {
+export async function getStaticProps(): Promise<any> {
+  const content = fs.readFileSync('pages/articles/resume.md').toString();
+  return { props: { content: content } };
+}
+
+// export async function getServerSideProps(): Promise<any> {
+// const gistUrl = https://git.io/JfUZE
+// const gistResumeUrl = 'https://gist.githubusercontent.com/tMinamiii/f1e93ca728eb66558f19fadb1a9e6feb/raw/resume.md';
 //   const resp = await fetch(gistResumeUrl);
 //   const text = await resp.text();
 //   return { props: { content: text } };
 // }
-// https://git.io/JfUZE
-
-export async function getServerSideProps(): Promise<any> {
-  const resp = await fetch(gistResumeUrl);
-  const text = await resp.text();
-  return { props: { content: text } };
-}
 
 // function Image(props: any) {
 //   return <img {...props} style={{ maxWidth: '1000px' }} />;
