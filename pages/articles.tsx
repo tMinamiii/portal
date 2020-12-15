@@ -28,7 +28,6 @@ function fetchZenArticles(feedStr: string): Array<ReactElement> {
   });
   return articles;
 }
-
 const ArticlesPage: React.FC<Props> = ({ zennFeed, qiitaFeed }: Props): ReactElement => {
   const zenn = fetchZenArticles(zennFeed);
   const qiita = fetchZenArticles(qiitaFeed);
