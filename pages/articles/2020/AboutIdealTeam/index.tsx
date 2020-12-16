@@ -14,17 +14,17 @@ export async function getStaticProps(): Promise<any> {
   return { props: { content: content } };
 }
 
-export default class AboutIdealTeam {
-  static title = '理想のチームについて';
-  static link = '/pages/articles/2020/AboutIdealTeam';
+const title = '理想のチームについて';
+// const link = '/pages/articles/2020/AboutIdealTeam';
 
-  static Article: React.FC<Props> = ({ content }: Props): ReactElement => {
-    return (
-      <div>
-        <HeaderElements title={AboutIdealTeam.title} />
-        <HeaderNavi />
-        <MdArticle content={content} />
-      </div>
-    );
-  };
-}
+const AboutIdealTeam: React.FC<Props> = ({ content }: Props): ReactElement => {
+  return (
+    <div>
+      <HeaderElements title={title} />
+      <HeaderNavi />
+      <MdArticle content={content} />
+    </div>
+  );
+};
+
+export default AboutIdealTeam;
