@@ -9,6 +9,7 @@ import { AboutIdealTeamTitle } from './articles/2020/AboutIdealTeam';
 type Props = {
   zennFeed: string;
   qiitaFeed: string;
+  scrapBoxFeed: string;
 };
 
 // export async function getServerSideProps(): Promise<any> {
@@ -16,9 +17,17 @@ export async function getStaticProps(): Promise<any> {
   const parser = new Parser();
   const zennFeedP = parser.parseURL('https://zenn.dev/tminamiii/feed');
   const qiitaFeedP = parser.parseURL('https://qiita.com/tMinamiii/feed.atom');
+  const scrapBoxFeedP = parser.parseURL('https://scrapbox.io/api/feed/tMinamiii');
   const zennFeed = await zennFeedP;
   const qiitaFeed = await qiitaFeedP;
-  return { props: { zennFeed: JSON.stringify(zennFeed), qiitaFeed: JSON.stringify(qiitaFeed) } };
+  const scrapBoxFeed = await scrapBoxFeedP;
+  return {
+    props: {
+      zennFeed: JSON.stringify(zennFeed),
+      qiitaFeed: JSON.stringify(qiitaFeed),
+      scrapBoxFeed: JSON.stringify(scrapBoxFeed),
+    },
+  };
 }
 
 function fetchMdArticles(): Array<ReactElement> {
@@ -29,28 +38,37 @@ function fetchMdArticles(): Array<ReactElement> {
   return articles;
 }
 
-function fetchRssArticles(feedStr: string): Array<ReactElement> {
+function trimTitle(media: string, title: string): string {
+  if (media.toLowerCase() === 'scrapbox') {
+    return title.replace(' - tMinamiii - Scrapbox', '');
+  }
+  return title;
+}
+
+function fetchRssArticles(media: string, feedStr: string): Array<ReactElement> {
   const feed = JSON.parse(feedStr);
   const articles: Array<ReactElement> = [];
   feed.items.map((f: any, i: number) => {
     if (f.title && f.link) {
-      articles.push(<ArticleLinkList key={`zenn_${i}`} title={f.title} url={f.link} />);
+      articles.push(<ArticleLinkList key={`${media}_${i}`} title={trimTitle(media, f.title)} url={f.link} />);
     }
   });
   return articles;
 }
 
-const ArticlesPage: React.FC<Props> = ({ zennFeed, qiitaFeed }: Props): ReactElement => {
-  const myContents = fetchMdArticles();
-  const zenn = fetchRssArticles(zennFeed);
-  const qiita = fetchRssArticles(qiitaFeed);
+const ArticlesPage: React.FC<Props> = ({ zennFeed, qiitaFeed, scrapBoxFeed }: Props): ReactElement => {
+  // const myContents = fetchMdArticles();
+  const zenn = fetchRssArticles('zenn', zennFeed);
+  const qiita = fetchRssArticles('qiita', qiitaFeed);
+  const scrapBox = fetchRssArticles('scrapbox', scrapBoxFeed);
+  // <ArticlesArea title="tminamiii.dev" articles={myContents} />;
   return (
     <div>
       <HeaderElements title="Articles" />
       <HeaderNavi />
-      <ArticlesArea title="tminamiii.dev" articles={myContents} />
       <ArticlesArea title="Zenn" articles={zenn} />
       <ArticlesArea title="Qiita" articles={qiita} />
+      <ArticlesArea title="ScrapBox" articles={scrapBox} />
     </div>
   );
 };

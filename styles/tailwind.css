@@ -6,7 +6,8 @@
 /* Stop purging. */
 
 div.my-articles li {
-    padding: 4px 0;
+    margin: 0 0 0 1em;
+    padding: 3px 0;
 }
 
 div.markdown-body h1 {
