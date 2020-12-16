@@ -12,6 +12,9 @@ type Props = {
   scrapBoxFeed: string;
 };
 
+// import AboutIdealTeam from '../pages/articles/2020/AboutIdealTeam';
+// const docs: Array<any> = [{ title: AboutIdealTeam.title, link: AboutIdealTeam.link }];
+
 // export async function getServerSideProps(): Promise<any> {
 export async function getStaticProps(): Promise<any> {
   const parser = new Parser();
