@@ -1,10 +1,10 @@
 import React, { ReactElement } from 'react';
 import Parser from 'rss-parser';
-import ArticleLinkList from '../components/ArticleLinkList';
-import ArticlesArea from '../components/ArticlesArea';
 import HeaderElements from '../components/HeaderElements';
 import HeaderNavi from '../components/HeaderNavi';
-import { AboutIdealTeamTitle } from './articles/2020/AboutIdealTeam';
+import QiitaArticles from '../components/QiitaArticles';
+import ScrapBoxArticles from '../components/ScrapBoxArticles';
+import ZennArticles from '../components/ZennArticles';
 
 type Props = {
   zennFeed: string;
@@ -30,45 +30,16 @@ export async function getStaticProps(): Promise<any> {
   };
 }
 
-function fetchMdArticles(): Array<ReactElement> {
-  const articles: Array<ReactElement> = [];
-  articles.push(
-    <ArticleLinkList key="about-ideal-team-2020" title={AboutIdealTeamTitle} url="/articles/2020/AboutIdealTeam" />,
-  );
-  return articles;
-}
-
-function trimTitle(media: string, title: string): string {
-  if (media.toLowerCase() === 'scrapbox') {
-    return title.replace(' - tMinamiii - Scrapbox', '');
-  }
-  return title;
-}
-
-function fetchRssArticles(media: string, feedStr: string): Array<ReactElement> {
-  const feed = JSON.parse(feedStr);
-  const articles: Array<ReactElement> = [];
-  feed.items.map((f: any, i: number) => {
-    if (f.title && f.link) {
-      articles.push(<ArticleLinkList key={`${media}_${i}`} title={trimTitle(media, f.title)} url={f.link} />);
-    }
-  });
-  return articles;
-}
-
 const ArticlesPage: React.FC<Props> = ({ zennFeed, qiitaFeed, scrapBoxFeed }: Props): ReactElement => {
   // const myContents = fetchMdArticles();
-  const zenn = fetchRssArticles('zenn', zennFeed);
-  const qiita = fetchRssArticles('qiita', qiitaFeed);
-  const scrapBox = fetchRssArticles('scrapbox', scrapBoxFeed);
   // <ArticlesArea title="tminamiii.dev" articles={myContents} />;
   return (
     <div>
       <HeaderElements title="Articles" />
       <HeaderNavi />
-      <ArticlesArea title="Zenn" articles={zenn} />
-      <ArticlesArea title="Qiita" articles={qiita} />
-      <ArticlesArea title="ScrapBox" articles={scrapBox} />
+      <ZennArticles feed={zennFeed} />
+      <QiitaArticles feed={qiitaFeed} />
+      <ScrapBoxArticles feed={scrapBoxFeed} />
     </div>
   );
 };

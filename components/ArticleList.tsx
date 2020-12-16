@@ -6,7 +6,7 @@ type Props = {
   title: string;
 };
 
-const ArticleLinkList: React.FC<Props> = ({ url, title }: Props): ReactElement => {
+const ArticleList: React.FC<Props> = ({ url, title }: Props): ReactElement => {
   return (
     <li>
       <Link href={url}>
@@ -15,4 +15,4 @@ const ArticleLinkList: React.FC<Props> = ({ url, title }: Props): ReactElement =
     </li>
   );
 };
-export default ArticleLinkList;
+export default ArticleList;
