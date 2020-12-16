@@ -1,5 +1,6 @@
 import React, { ReactElement } from 'react';
 import Border from '../components/Border';
+import ArticleLinks from './ArticleLinks';
 import ArticleList from './ArticleList';
 
 type Props = {
@@ -13,9 +14,10 @@ const ZennArticles: React.FC<Props> = ({ feed }: Props): ReactElement => {
   const articles: Array<ReactElement> = [];
   feedobj.items.map((f: any, i: number) => {
     if (f.title && f.link) {
-      articles.push(<ArticleList key={`${media}_${i}`} title={f.title} url={f.link} />);
+      articles.push(<ArticleLinks key={`${media}_${i}`} title={f.title} url={f.link} />);
     }
   });
-  return <Border media={media} articles={articles} />;
+  const articleList = <ArticleList media={media} articles={articles} />;
+  return <Border element={articleList} />;
 };
 export default ZennArticles;

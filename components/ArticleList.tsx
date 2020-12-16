@@ -1,18 +1,24 @@
-import Link from 'next/link';
 import React, { ReactElement } from 'react';
 
 type Props = {
-  url: string;
-  title: string;
+  media: string;
+  articles: Array<ReactElement>;
 };
 
-const ArticleList: React.FC<Props> = ({ url, title }: Props): ReactElement => {
+const ArticleList: React.FC<Props> = ({ media, articles }: Props): ReactElement => {
+  const lowerMedia = media.toLowerCase();
+  const imagePath = `/images/${lowerMedia}.png`;
   return (
-    <li>
-      <Link href={url}>
-        <a className="underline">{title}</a>
-      </Link>
-    </li>
+    <div>
+      <p>
+        <img className="mr-1 inline-block align-middle" src={imagePath} width="24" height="24" />
+        <span className="text-xl font-bold inline-block align-middle">{media}</span>
+      </p>
+      <div className="my-articles list-mark">
+        <ul>{articles}</ul>
+      </div>
+    </div>
   );
 };
+
 export default ArticleList;
