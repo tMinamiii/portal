@@ -9,9 +9,17 @@ const HeaderNavi: React.FC = (): ReactElement => {
           <a className="underline">Resume</a>
         </Link>
         {' - '}
+        <Link href="/profile">
+          <a className="underline">Profile</a>
+        </Link>
+        {' - '}
         <Link href="/articles">
           <a className="underline">Articles</a>
-        </Link>{' '}
+        </Link>
+        {' - '}
+        <Link href="https://www.instagram.com/tminamiii/">
+          <a className="underline">Photos</a>
+        </Link>
       </nav>
     </header>
   );
