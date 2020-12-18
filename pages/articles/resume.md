@@ -5,15 +5,12 @@
 
 ## 基本情報
 
-![Image from Gyazo](https://i.gyazo.com/e1e68fb95b7c7acdf73171f3f4afd4b0.jpg)
-
 - 名前: 南 貴博(みなみ たかひろ)
 - 性別: 男性 (1984年うまれ)
 - [Twitter @tMinamiii](https://twitter.com/tMinamiii)
 - [GitHub @tMinamiii](https://github.com/tMinamiii)
 - [Qiita @tMinamiii](https://qiita.com/tMinamiii)
 - [Zenn @tminamiii](https://zenn.dev/tminamiii)
-- [Instagram @tminamiii](https://www.instagram.com/tminamiii/)
 - [Lapras](https://lapras.com/public/0ENWW7C)
 
 ## 開発歴
