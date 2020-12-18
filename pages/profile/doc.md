@@ -5,10 +5,6 @@
 - 名前: 南 貴博
 - 性別: 男
 - 生年月日: 1984年7月30日
-- [Twitter @tMinamiii](https://twitter.com/tMinamiii)
-- [GitHub @tMinamiii](https://github.com/tMinamiii)
-- [Qiita @tMinamiii](https://qiita.com/tMinamiii)
-- [Zenn @tminamiii](https://zenn.dev/tminamiii)
 
 ## 好きなこと・好きなもの
 
