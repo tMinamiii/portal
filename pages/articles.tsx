@@ -29,7 +29,7 @@ export async function getStaticProps(): Promise<any> {
       qiitaFeed: JSON.stringify(qiitaFeed),
       scrapBoxFeed: JSON.stringify(scrapBoxFeed),
     },
-    revalidate: 1800,
+    revalidate: 300,
   };
 }
 

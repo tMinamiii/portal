@@ -14,7 +14,7 @@ export async function getStaticProps(): Promise<any> {
   const gistResumeUrl = 'https://gist.githubusercontent.com/tMinamiii/f1e93ca728eb66558f19fadb1a9e6feb/raw/resume.md';
   const resp = await fetch(gistResumeUrl);
   const text = await resp.text();
-  return { props: { content: text }, revalidate: 600 };
+  return { props: { content: text }, revalidate: 300 };
 }
 
 // function Image(props: any) {
