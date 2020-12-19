@@ -12,9 +12,6 @@ type Props = {
   scrapBoxFeed: string;
 };
 
-// import AboutIdealTeam from '../pages/articles/2020/AboutIdealTeam';
-// const docs: Array<any> = [{ title: AboutIdealTeam.title, link: AboutIdealTeam.link }];
-
 export async function getStaticProps(): Promise<any> {
   const parser = new Parser();
   const zennFeedP = parser.parseURL('https://zenn.dev/tminamiii/feed');
@@ -34,8 +31,6 @@ export async function getStaticProps(): Promise<any> {
 }
 
 const ArticlesPage: React.FC<Props> = ({ zennFeed, qiitaFeed, scrapBoxFeed }: Props): ReactElement => {
-  // const myContents = fetchMdArticles();
-  // <ArticlesArea title="tminamiii.dev" articles={myContents} />;
   return (
     <div>
       <HeaderElements title="Articles" />

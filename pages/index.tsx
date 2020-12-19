@@ -7,8 +7,6 @@ type Props = {
   content: string;
 };
 
-// - [Instagram @tminamiii](https://www.instagram.com/tminamiii/)
-/* ![Image from Gyazo](https://i.gyazo.com/e1e68fb95b7c7acdf73171f3f4afd4b0.jpg) */
 export async function getStaticProps(): Promise<any> {
   // shortURL https://git.io/JfUZE
   const gistResumeUrl = 'https://gist.githubusercontent.com/tMinamiii/f1e93ca728eb66558f19fadb1a9e6feb/raw/resume.md';
