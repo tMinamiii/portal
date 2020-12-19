@@ -12,6 +12,16 @@ type Props = {
   scrapBoxFeed: string;
 };
 
+// SSGのビルド時のみ呼ばれるライフサイクル
+//   -- ISRを利用する場合は `paths` を空配列にする
+//   -- ISRを利用する場合は `fallback` を真にする
+export async function getStaticPaths(): Promise<any> {
+  return {
+    paths: [],
+    fallback: true,
+  };
+}
+
 // import AboutIdealTeam from '../pages/articles/2020/AboutIdealTeam';
 // const docs: Array<any> = [{ title: AboutIdealTeam.title, link: AboutIdealTeam.link }];
 
