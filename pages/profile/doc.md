@@ -1,6 +1,6 @@
 # プロフィール
 
-[![Image from Gyazo](https://i.gyazo.com/db570baabfb61066822fad9b8e78ecfd.jpg)](https://gyazo.com/db570baabfb61066822fad9b8e78ecfd)
+[![Image from Gyazo](https://i.gyazo.com/4c369d225fd9589a82709338a53292fc.jpg)](https://gyazo.com/4c369d225fd9589a82709338a53292fc)
 
 - 名前: 南 貴博
 - 性別: 男
