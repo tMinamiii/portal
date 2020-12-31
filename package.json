@@ -1,5 +1,6 @@
 {
   "name": "with-typescript",
+  "type": "module",
   "repository": "",
   "version": "1.0.0",
   "scripts": {
