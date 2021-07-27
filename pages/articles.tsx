@@ -3,6 +3,7 @@ import Parser from 'rss-parser';
 import HeaderElements from '../components/HeaderElements';
 import HeaderNavi from '../components/HeaderNavi';
 import QiitaArticles from '../components/QiitaArticles';
+import OtherArticles from '../components/OtherArticles';
 import ScrapBoxArticles from '../components/ScrapBoxArticles';
 import ZennArticles from '../components/ZennArticles';
 
@@ -38,6 +39,7 @@ const ArticlesPage: React.FC<Props> = ({ zennFeed, qiitaFeed, scrapBoxFeed }: Pr
       <ZennArticles feed={zennFeed} />
       <QiitaArticles feed={qiitaFeed} />
       <ScrapBoxArticles feed={scrapBoxFeed} />
+      <OtherArticles />
     </div>
   );
 };
