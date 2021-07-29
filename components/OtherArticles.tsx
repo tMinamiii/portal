@@ -6,10 +6,10 @@ import Border from './Border';
 const media = 'Other';
 const items = [
   {
-    key:"every_1",
-    title:"DELISH KITCHENチラシの郵便番号・地域名・店舗名検索実装について",
-    url:"https://tech.every.tv/entry/2021/07/27/120251",
-  }
+    key: 'every_1',
+    title: 'DELISH KITCHENチラシの郵便番号・地域名・店舗名検索実装について',
+    url: 'https://tech.every.tv/entry/2021/07/27/120251',
+  },
 ];
 
 const OtherArticles: React.FC = (): ReactElement => {
