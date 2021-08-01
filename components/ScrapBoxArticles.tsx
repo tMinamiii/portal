@@ -14,7 +14,12 @@ function trimTitle(title: string): string {
 
 const ScrapBoxArticles: React.FC<Props> = ({ feed }: Props): ReactElement => {
   const feedobj = JSON.parse(feed);
-  const articles: Array<ReactElement> = feedobj.items.map((f: any, i: number) => {
+  const sorted = feedobj.items.sort((a: any, b:any) => {
+    const aTime = Date.parse(a.isoDate);
+    const bTime = Date.parse(b.isoDate);
+    return bTime - aTime;
+  })
+  const articles: Array<ReactElement> = sorted.map((f: any, i: number) => {
     if (f.title && f.link) {
       return <ArticleLinks key={`${media}_${i}`} title={trimTitle(f.title)} url={f.link} />;
     }
