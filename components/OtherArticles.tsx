@@ -13,9 +13,8 @@ const items = [
 ];
 
 const OtherArticles: React.FC = (): ReactElement => {
-  const articles: Array<ReactElement> = [];
-  items.map((f: any) => {
-    articles.push(<ArticleLinks key={f.key} title={f.title} url={f.url} />);
+  const articles: Array<ReactElement> = items.map((f: any) => {
+    return <ArticleLinks key={f.key} title={f.title} url={f.url} />;
   });
   const articleList = <ArticleList media={media} articles={articles} />;
   return <Border element={articleList} />;
