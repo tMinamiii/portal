@@ -4,10 +4,7 @@
 			"path": "."
 		},
 		{
-			"path": "../note"
-		},
-		{
-			"path": "../../../gist.github.com/RESUME"
+			"path": "../resume"
 		},
 	],
 	"settings": {}
