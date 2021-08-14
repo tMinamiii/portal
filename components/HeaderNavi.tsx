@@ -16,10 +16,6 @@ const HeaderNavi: React.FC = (): ReactElement => {
         <Link href="/articles">
           <a className="underline">Articles</a>
         </Link>
-        {' - '}
-        <Link href="https://www.instagram.com/tminamiii/">
-          <a className="underline">Photos</a>
-        </Link>
       </nav>
     </header>
   );
