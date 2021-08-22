@@ -14,8 +14,6 @@ font-size: 22px;
 
 - Linus Torvalds、LinuxとGit(Linuxを分散開発するために必要だった)を作った人
 
-[![Image from Gyazo](https://i.gyazo.com/81a46bb3d011bc133514477914987640.jpg)](https://gyazo.com/81a46bb3d011bc133514477914987640)
-
 ---
 
 ## 1.1 システムプログラミング
