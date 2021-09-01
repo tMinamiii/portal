@@ -640,6 +640,7 @@ int strerror_r (int errnum, char *buf, size_t len);
 
 - strerror_r()はスレッドセーフです。lenのサイズを持つバッファをあらかじめ確保し、bufへ与え、コールすると、バッファへエラーメッセージがコピーされます。strerror_r()は処理に成功すると0を、エラー発生時には -1 を、それぞれ返します
 
+---
 
 ### 1.4.8 エラー処理 strerror()および strerror_r() 2
 
