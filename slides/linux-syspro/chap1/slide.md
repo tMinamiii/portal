@@ -574,7 +574,7 @@ https://ja.wikipedia.org/wiki/%E5%90%8D%E5%89%8D%E4%BB%98%E3%81%8D%E3%83%91%E3%8
   - **名前付きパイプ（named pipe）**: mkfifo
   - **セマフォ（semaphore）**: 複数プロセス間で排他制御する仕組み？？
   - **メッセージキュー（message queue）**: プロセス間の情報交換の方法
-  - **共有メモリ（shared memory）**: 2つ以上のプロセスでのメモリを共有させること
+  - **共有メモリ（shared memory）** 2つ以上のプロセスでのメモリを共有
   - **futex（Fast Userspace muTex）**:
     - 指定したアドレスの値が変更されるのをプログラムが待つ手段を提供
     - 特定のアドレスに対して待機中のプロセスを wake (起床) させる手段を提供
