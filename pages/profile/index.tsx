@@ -1,5 +1,4 @@
 import fs from 'fs';
-import Image from 'next/image';
 import React, { ReactElement } from 'react';
 import HeaderElements from '../../components/HeaderElements';
 import HeaderNavi from '../../components/HeaderNavi';
@@ -16,7 +15,7 @@ export async function getStaticProps(): Promise<any> {
 }
 
 function ImageTag(props: any) {
-  return <Image {...props} className="rounded-full" />;
+  return <img {...props} className="rounded-full" />;
 }
 // function Text(props: any) {
 //   return <p {...props} style={{ maxWidth: '1000px', margin: '2px', display: 'inline-block' }} />;
