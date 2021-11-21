@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React, { ReactElement } from 'react';
 
 type Props = {
@@ -11,7 +12,7 @@ const ArticleList: React.FC<Props> = ({ media, articles }: Props): ReactElement 
   return (
     <div>
       <p>
-        <img className="mr-1 inline-block align-middle" src={imagePath} width="24" height="24" />
+        <Image src={imagePath} width={24} height={24} className="mr-1 inline-block align-middle" />
         <span className="text-xl font-bold inline-block align-middle">{media}</span>
       </p>
       <div className="my-articles list-mark">

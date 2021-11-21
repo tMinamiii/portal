@@ -1,4 +1,5 @@
 import fs from 'fs';
+import Image from 'next/image';
 import React, { ReactElement } from 'react';
 import HeaderElements from '../../components/HeaderElements';
 import HeaderNavi from '../../components/HeaderNavi';
@@ -14,8 +15,8 @@ export async function getStaticProps(): Promise<any> {
   return { props: { content: content } };
 }
 
-function Image(props: any) {
-  return <img {...props} className="rounded-full" />;
+function ImageTag(props: any) {
+  return <Image {...props} className="rounded-full" />;
 }
 // function Text(props: any) {
 //   return <p {...props} style={{ maxWidth: '1000px', margin: '2px', display: 'inline-block' }} />;
@@ -27,7 +28,7 @@ const ProfilePage: React.FC<Props> = ({ content }: Props): ReactElement => {
     <div>
       <HeaderElements title="Profile" />
       <HeaderNavi />
-      <MdArticle content={content} renderers={{ image: Image }} />
+      <MdArticle content={content} renderers={{ image: ImageTag }} />
     </div>
   );
 };
