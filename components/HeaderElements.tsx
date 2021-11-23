@@ -1,12 +1,12 @@
-import Header from 'next/head';
-import React, { ReactElement } from 'react';
-const GA_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
+import Header from 'next/head'
+import React, { ReactElement } from 'react'
+const GA_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID
 
-const existsGaId = GA_ID !== '';
+const existsGaId = GA_ID !== ''
 
 type Props = {
-  title: string;
-};
+  title: string
+}
 
 const HeaderElements: React.FC<Props> = ({ title }: Props): ReactElement => {
   return (
@@ -33,6 +33,6 @@ const HeaderElements: React.FC<Props> = ({ title }: Props): ReactElement => {
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <link rel="shortcut icon" href="/static/favicon.ico" />
     </Header>
-  );
-};
-export default HeaderElements;
+  )
+}
+export default HeaderElements

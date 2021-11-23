@@ -1,21 +1,21 @@
-import React, { ReactElement } from 'react';
-import ArticleLinks from './ArticleLinks';
-import ArticleList from './ArticleList';
-import Border from './Border';
+import React, { ReactElement } from 'react'
+import ArticleLinks from './ArticleLinks'
+import ArticleList from './ArticleList'
+import Border from './Border'
 
 type Props = {
-  feed: string;
-};
-const media = 'Note';
+  feed: string
+}
+const media = 'Note'
 const QiitaArticles: React.FC<Props> = ({ feed }: Props): ReactElement => {
-  const feedobj = JSON.parse(feed);
-  const articles: Array<ReactElement> = [];
+  const feedobj = JSON.parse(feed)
+  const articles: Array<ReactElement> = []
   feedobj.items.map((f: any, i: number) => {
     if (f.title && f.link) {
-      articles.push(<ArticleLinks key={`${media}_${i}`} title={f.title} url={f.link} />);
+      articles.push(<ArticleLinks key={`${media}_${i}`} title={f.title} url={f.link} />)
     }
-  });
-  const articleList = <ArticleList media={media} articles={articles} />;
-  return <Border element={articleList} />;
-};
-export default QiitaArticles;
+  })
+  const articleList = <ArticleList media={media} articles={articles} />
+  return <Border element={articleList} />
+}
+export default QiitaArticles

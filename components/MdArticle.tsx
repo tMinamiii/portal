@@ -1,13 +1,13 @@
-import 'github-markdown-css';
-import React, { ReactElement } from 'react';
-import ReactMarkdown from 'react-markdown';
-import gfm from 'remark-gfm';
-import Border from '../components/Border';
+import 'github-markdown-css'
+import React, { ReactElement } from 'react'
+import ReactMarkdown from 'react-markdown'
+import gfm from 'remark-gfm'
+import Border from '../components/Border'
 
 type Props = {
-  content: string;
-  renderers?: any;
-};
+  content: string
+  renderers?: any
+}
 
 const MdArticle: React.FC<Props> = ({ renderers, content }: Props): ReactElement => {
   return (
@@ -18,6 +18,6 @@ const MdArticle: React.FC<Props> = ({ renderers, content }: Props): ReactElement
         </div>
       }
     />
-  );
-};
-export default MdArticle;
+  )
+}
+export default MdArticle

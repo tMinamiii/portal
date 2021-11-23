@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
 const AppPage: React.FC = () => {
-  const [inputText, setText] = useState<string>('');
+  const [inputText, setText] = useState<string>('')
 
   const handleOnChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
-    setText(event.target.value);
-  };
+    setText(event.target.value)
+  }
   return (
     <div>
       <input
@@ -16,7 +16,7 @@ const AppPage: React.FC = () => {
       />
       <h1 className="ml-3">Text: {inputText}</h1>
     </div>
-  );
-};
+  )
+}
 
-export default AppPage;
+export default AppPage

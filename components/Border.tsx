@@ -1,8 +1,8 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement } from 'react'
 
 type Props = {
-  element: ReactElement;
-};
+  element: ReactElement
+}
 
 const Border: React.FC<Props> = ({ element }: Props): ReactElement => {
   return (
@@ -13,7 +13,7 @@ const Border: React.FC<Props> = ({ element }: Props): ReactElement => {
       </div>
       <div className="col-span-1" />
     </div>
-  );
-};
+  )
+}
 
-export default Border;
+export default Border

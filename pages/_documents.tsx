@@ -1,7 +1,7 @@
-import NextDocument, { Html, Main, NextScript } from 'next/document';
-import { ReactElement } from 'react';
+import NextDocument, { Html, Main, NextScript } from 'next/document'
+import { ReactElement } from 'react'
 
-type Props = any;
+type Props = any
 
 class Document extends NextDocument<Props> {
   render(): ReactElement {
@@ -12,8 +12,8 @@ class Document extends NextDocument<Props> {
           <NextScript />
         </body>
       </Html>
-    );
+    )
   }
 }
 
-export default Document;
+export default Document

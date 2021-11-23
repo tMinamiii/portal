@@ -1,14 +1,14 @@
-import Image from 'next/image';
-import React, { ReactElement } from 'react';
+import Image from 'next/image'
+import React, { ReactElement } from 'react'
 
 type Props = {
-  media: string;
-  articles: Array<ReactElement>;
-};
+  media: string
+  articles: Array<ReactElement>
+}
 
 const ArticleList: React.FC<Props> = ({ media, articles }: Props): ReactElement => {
-  const lowerMedia = media.toLowerCase();
-  const imagePath = `/images/${lowerMedia}.png`;
+  const lowerMedia = media.toLowerCase()
+  const imagePath = `/images/${lowerMedia}.png`
   return (
     <div>
       <p>
@@ -19,7 +19,7 @@ const ArticleList: React.FC<Props> = ({ media, articles }: Props): ReactElement 
         <ul>{articles}</ul>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ArticleList;
+export default ArticleList

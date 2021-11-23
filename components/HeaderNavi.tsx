@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import React, { ReactElement } from 'react';
+import Link from 'next/link'
+import React, { ReactElement } from 'react'
 
 const HeaderNavi: React.FC = (): ReactElement => {
   return (
@@ -18,6 +18,6 @@ const HeaderNavi: React.FC = (): ReactElement => {
         </Link>
       </nav>
     </header>
-  );
-};
-export default HeaderNavi;
+  )
+}
+export default HeaderNavi

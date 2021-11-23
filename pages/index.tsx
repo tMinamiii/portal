@@ -1,18 +1,18 @@
-import React, { ReactElement } from 'react';
-import HeaderElements from '../components/HeaderElements';
-import HeaderNavi from '../components/HeaderNavi';
-import MdArticle from '../components/MdArticle';
+import React, { ReactElement } from 'react'
+import HeaderElements from '../components/HeaderElements'
+import HeaderNavi from '../components/HeaderNavi'
+import MdArticle from '../components/MdArticle'
 
 type Props = {
-  content: string;
-};
+  content: string
+}
 
 export async function getStaticProps(): Promise<any> {
   // shortURL https://git.io/JfUZE
-  const gistResumeUrl = 'https://gist.githubusercontent.com/tMinamiii/f1e93ca728eb66558f19fadb1a9e6feb/raw/resume.md';
-  const resp = await fetch(gistResumeUrl);
-  const text = await resp.text();
-  return { props: { content: text }, revalidate: 300 };
+  const gistResumeUrl = 'https://gist.githubusercontent.com/tMinamiii/f1e93ca728eb66558f19fadb1a9e6feb/raw/resume.md'
+  const resp = await fetch(gistResumeUrl)
+  const text = await resp.text()
+  return { props: { content: text }, revalidate: 300 }
 }
 
 // function Image(props: any) {
@@ -58,6 +58,6 @@ const ResumePage: React.FC<Props> = ({ content }: Props): ReactElement => {
       <HeaderNavi />
       <MdArticle content={content} />
     </div>
-  );
-};
-export default ResumePage;
+  )
+}
+export default ResumePage

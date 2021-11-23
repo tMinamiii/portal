@@ -1,13 +1,13 @@
-import { ReactElement } from 'react';
-import '../styles/tailwind.css';
+import { ReactElement } from 'react'
+import '../styles/tailwind.css'
 
 type AppProps = {
-  Component: any;
-  pageProps: any;
-};
-
-function App({ Component, pageProps }: AppProps): ReactElement {
-  return <Component {...pageProps} />;
+  Component: any
+  pageProps: any
 }
 
-export default App;
+function App({ Component, pageProps }: AppProps): ReactElement {
+  return <Component {...pageProps} />
+}
+
+export default App
