@@ -14,7 +14,9 @@ const MdArticle: React.FC<Props> = ({ renderers, content }: Props): ReactElement
     <Border
       element={
         <div className="markdown-body">
-          <ReactMarkdown className="list-mark" plugins={[gfm]} renderers={renderers} source={content} />
+          <ReactMarkdown className="list-mark" plugins={[gfm]} renderers={renderers}>
+            {content}
+          </ReactMarkdown>
         </div>
       }
     />
