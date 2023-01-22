@@ -6,7 +6,7 @@ import MdArticle from '../../components/MdArticle'
 
 type Props = {
   title: string
-  content: string
+  children: string
 }
 
 export async function getStaticProps(): Promise<any> {
@@ -17,17 +17,13 @@ export async function getStaticProps(): Promise<any> {
 function ImageTag(props: any) {
   return <img {...props} className="rounded-full" />
 }
-// function Text(props: any) {
-//   return <p {...props} style={{ maxWidth: '1000px', margin: '2px', display: 'inline-block' }} />;
-// }
-// renderers={{ image: Image, text: Text }}
 
-const ProfilePage: React.FC<Props> = ({ content }: Props): ReactElement => {
+const ProfilePage: React.FC<Props> = ({ children }: Props): ReactElement => {
   return (
     <div>
       <HeaderElements title="Profile" />
       <HeaderNavi />
-      <MdArticle content={content} renderers={{ image: ImageTag }} />
+      <MdArticle components={{ image: ImageTag }}>{children}</MdArticle>
     </div>
   )
 }

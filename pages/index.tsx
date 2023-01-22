@@ -4,7 +4,7 @@ import HeaderNavi from '../components/HeaderNavi'
 import MdArticle from '../components/MdArticle'
 
 type Props = {
-  content: string
+  children: string
 }
 
 export async function getStaticProps(): Promise<any> {
@@ -12,16 +12,8 @@ export async function getStaticProps(): Promise<any> {
   const gistResumeUrl = 'https://gist.githubusercontent.com/tMinamiii/f1e93ca728eb66558f19fadb1a9e6feb/raw/resume.md'
   const resp = await fetch(gistResumeUrl)
   const text = await resp.text()
-  return { props: { content: text }, revalidate: 300 }
+  return { props: { children: text }, revalidate: 300 }
 }
-
-// function Image(props: any) {
-//   return <img {...props} style={{ maxWidth: '1000px' }} />;
-// }
-// function Text(props: any) {
-//   return <p {...props} style={{ maxWidth: '1000px', margin: '2px', display: 'inline-block' }} />;
-// }
-// renderers={{ image: Image, text: Text }}
 
 /**
  *
@@ -51,12 +43,12 @@ export async function getStaticProps(): Promise<any> {
 
  */
 
-const ResumePage: React.FC<Props> = ({ content }: Props): ReactElement => {
+const ResumePage: React.FC<Props> = ({ children }: Props): ReactElement => {
   return (
     <div>
       <HeaderElements title="Resume" />
       <HeaderNavi />
-      <MdArticle content={content} />
+      <MdArticle>{children}</MdArticle>
     </div>
   )
 }

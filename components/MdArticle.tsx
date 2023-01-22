@@ -1,20 +1,23 @@
 import 'github-markdown-css/github-markdown-light.css'
 import React, { ReactElement } from 'react'
 import ReactMarkdown from 'react-markdown'
+import { NormalComponents } from 'react-markdown/lib/complex-types'
+import { SpecialComponents } from 'react-markdown/lib/ast-to-react'
 import gfm from 'remark-gfm'
 import Border from '../components/Border'
 
 type Props = {
-  content: string
+  children: string
+  components?: Partial<Omit<NormalComponents, keyof SpecialComponents> & SpecialComponents> | undefined
 }
 
-const MdArticle: React.FC<Props> = ({ content }: Props): ReactElement => {
+const MdArticle: React.FC<Props> = ({ children, components }: Props): ReactElement => {
   return (
     <Border
       element={
         <div className="markdown-body">
-          <ReactMarkdown className="list-mark" remarkPlugins={[gfm]}>
-            {content}
+          <ReactMarkdown className="list-mark" remarkPlugins={[gfm]} components={components}>
+            {children}
           </ReactMarkdown>
         </div>
       }
