@@ -3,6 +3,7 @@ import React, { ReactElement } from 'react'
 import HeaderElements from '../../components/HeaderElements'
 import HeaderNavi from '../../components/HeaderNavi'
 import MdArticle from '../../components/MdArticle'
+import Image from 'next/image'
 
 type Props = {
   title: string
@@ -11,11 +12,13 @@ type Props = {
 
 export async function getStaticProps(): Promise<any> {
   const content = fs.readFileSync('pages/profile/doc.md').toString()
-  return { props: { content: content } }
+  return { props: { children: content } }
 }
 
-function ImageTag(props: any) {
-  return <img {...props} className="rounded-full" />
+const MarkdownComponents: Record<string, unknown> = {
+  img: (image: any) => {
+    return <Image src={image.src} alt={image.alt} width={200} height={200} className="rounded-full" />
+  },
 }
 
 const ProfilePage: React.FC<Props> = ({ children }: Props): ReactElement => {
@@ -23,7 +26,7 @@ const ProfilePage: React.FC<Props> = ({ children }: Props): ReactElement => {
     <div>
       <HeaderElements title="Profile" />
       <HeaderNavi />
-      <MdArticle components={{ image: ImageTag }}>{children}</MdArticle>
+      <MdArticle components={MarkdownComponents}>{children}</MdArticle>
     </div>
   )
 }
