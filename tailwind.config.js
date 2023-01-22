@@ -1,7 +1,7 @@
 //https://tailwindcss.com/docs/list-style-type
 module.exports = {
   purge: ['./components/**/*.{js,ts,jsx,tsx}', './pages/**/*.{js,ts,jsx,tsx}'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'media',
   theme: {
     extend: {},
     container: {
@@ -12,4 +12,4 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-};
+}

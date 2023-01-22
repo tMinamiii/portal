@@ -9,8 +9,8 @@ type Props = {
 const ArticleLinks: React.FC<Props> = ({ url, title }: Props): ReactElement => {
   return (
     <li>
-      <Link href={url}>
-        <a className="underline">{title}</a>
+      <Link className="underline" href={url}>
+        {title}
       </Link>
     </li>
   )

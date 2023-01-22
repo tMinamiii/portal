@@ -5,16 +5,16 @@ const HeaderNavi: React.FC = (): ReactElement => {
   return (
     <header>
       <nav className="text-center text-xl p-4">
-        <Link href="/">
-          <a className="underline">Resume</a>
+        <Link className="underline" href="/">
+          Resume
         </Link>
         {' - '}
-        <Link href="/profile">
-          <a className="underline">Profile</a>
+        <Link className="underline" href="/profile">
+          Profile
         </Link>
         {' - '}
-        <Link href="/articles">
-          <a className="underline">Articles</a>
+        <Link className="underline" href="/articles">
+          Articles
         </Link>
       </nav>
     </header>
