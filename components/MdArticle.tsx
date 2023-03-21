@@ -4,7 +4,7 @@ import ReactMarkdown from 'react-markdown'
 import { NormalComponents } from 'react-markdown/lib/complex-types'
 import { SpecialComponents } from 'react-markdown/lib/ast-to-react'
 import gfm from 'remark-gfm'
-import Border from '../components/Border'
+import Border from './atoms/Border'
 
 type Props = {
   children: string

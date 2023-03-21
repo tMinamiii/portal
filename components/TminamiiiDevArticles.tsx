@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react'
-import ArticleLinks from './ArticleLinks'
-import ArticleList from './ArticleList'
-import Border from './Border'
+import ArticleLinks from './atoms/ArticleLinks'
+import ArticleList from './atoms/ArticleList'
+import Border from './atoms/Border'
 
 type Props = {
   docs: Array<any>

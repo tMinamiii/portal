@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react'
-import Border from '../components/Border'
-import ArticleLinks from './ArticleLinks'
-import ArticleList from './ArticleList'
+import Border from './atoms/Border'
+import ArticleLinks from './atoms/ArticleLinks'
+import ArticleList from './atoms/ArticleList'
 
 type Props = {
   feed: string
