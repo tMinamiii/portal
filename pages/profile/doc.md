@@ -9,13 +9,12 @@
 ## 好きなこと・好きなもの
 
 - 趣味: 散歩, Amazon Prime Video
-- もの: ガジェットいろいろ・雪
-- 歌手: サカナクション(アルデバラン、白波トップウォーター)
-- 場所: 近所のタリーズ
+- もの: 雪
+- 歌手: サカナクション
 - 食べ物: カレー, カレースープ、唐揚げ
 - お菓子: [ロケッツ キャンディロール(ラムネ)](https://www.amazon.co.jp/dp/B012ZFXKZY)
 - 本: 技術書全般
-- 技術: AWS, AWS Lambda, Python, TypeScript, Go, Java,  OpenAPI, 情報検索
+- 技術: AWS, AWS Lambda, Python, TypeScript, Go, Java,  OpenAPI
 - OS: Ubuntu, macOS
 
 ## 最近好きになったこと・もの
@@ -23,6 +22,6 @@
 - 趣味: AppleWatchでライフログ管理、スマホで景色撮影
 - 場所: ハワイ、 きれいな景色
 - 食べ物: お刺し身、 お寿司
-- こと: コミュニケーション(おしゃべり・雑談)、人と人を結ぶこと
+- こと: コミュニケーション(おしゃべり・雑談)
 - 技術: Next.js
 - OS: Windows
