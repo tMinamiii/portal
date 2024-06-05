@@ -1,10 +1,11 @@
-import React, { ReactElement } from 'react'
+import type React from 'react'
+import type { ReactElement } from 'react'
 import ArticleLinks from './atoms/ArticleLinks'
 import ArticleList from './atoms/ArticleList'
 import Border from './atoms/Border'
 
 const media = 'Other'
-const items = [
+const items: Array<OtherObj> = [
   {
     key: 'every_1',
     title: 'DELISH KITCHENチラシの郵便番号・地域名・店舗名検索実装について',
@@ -17,8 +18,14 @@ const items = [
   },
 ]
 
+type OtherObj = {
+  key: string
+  title: string
+  url: string
+}
+
 const OtherArticles: React.FC = (): ReactElement => {
-  const articles: Array<ReactElement> = items.map((f: any) => {
+  const articles: Array<ReactElement> = items.map((f: OtherObj) => {
     return <ArticleLinks key={f.key} title={f.title} url={f.url} />
   })
   const articleList = <ArticleList media={media} articles={articles} />

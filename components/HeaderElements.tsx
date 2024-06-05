@@ -1,5 +1,6 @@
 import Header from 'next/head'
-import React, { ReactElement } from 'react'
+import type React from 'react'
+import type { ReactElement } from 'react'
 import Script from 'next/script'
 
 const GA_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID
@@ -20,6 +21,7 @@ const HeaderElements: React.FC<Props> = ({ title }: Props): ReactElement => {
           <>
             <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
             <script
+              // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
               dangerouslySetInnerHTML={{
                 __html: `
                 window.dataLayer = window.dataLayer || [];
